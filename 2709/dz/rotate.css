@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "Mulish";
+  src: url("Mulish-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font: normal 16px/24px "Mulish";
+  margin: 0;
+}
+.container {
+  margin: 50px auto;
+  background: pink;
+  position: relative;
+  padding: 10px;
+}
+p,
+h1,
+h4 {
+  background: white;
+  border-radius: 10px;
+  width: 280px;
+  padding: 10px;
+}
+@media screen and (min-width: 720px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 816px;
+    padding: 0;
+    width: 816px;
+  }
+  p {
+    position: absolute;
+    margin: 0;
+  }
+  .first {
+    top: 50px;
+    left: 50px;
+  }
+  .second {
+    top: 50px;
+    right: 50px;
+  }
+  .third {
+    bottom: 50px;
+    left: calc(50% - 150px);
+  }
+}
+@media screen and (min-width: 1200px) {
+  @keyframes circle {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  p {
+    animation: circle 10s infinite linear;
+  }
+  .first {
+    transform-origin: 358px 358px;
+  }
+  .second {
+    transform-origin: -58px 358px;
+  }
+  .third {
+    transform-origin: 150px -242px;
+  }
+}
