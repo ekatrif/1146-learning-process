@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "Lobster";
+  src: url("Fonts/Lobster-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font: normal 16px/24px "Lobster";
+  margin: 0;
+  background: white;
+}
+.container {
+  margin: 50px auto;
+  background: pink;
+  position: relative;
+  padding: 10px;
+  background: linear-gradient(to left top, lightblue, beige);
+}
+p,
+h1,
+h4 {
+  background: white;
+  border-radius: 10px;
+  width: 280px;
+
+  padding: 5px;
+  margin: 10px auto;
+  text-align: center;
+}
+p {
+  height: 96px;
+}
+h1,
+h4 {
+  height: 50px;
+}
+@media screen and (min-width: 640px) {
+  @keyframes move1 {
+    0% {
+      top: 50%;
+      left: 50%;
+    }
+    100% {
+      top: 50px;
+      left: 50px;
+    }
+  }
+  @keyframes move2 {
+    0% {
+      top: 50%;
+      right: 50%;
+    }
+    100% {
+      top: 50px;
+      right: 50px;
+    }
+  }
+  @keyframes move3 {
+    0% {
+      left: 50%;
+      bottom: 50%;
+    }
+    100% {
+      bottom: 50px;
+      left: 50px;
+    }
+  }
+  @keyframes move4 {
+    0% {
+      bottom: 50%;
+      right: 50%;
+    }
+    100% {
+      bottom: 50px;
+      right: 50px;
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+    padding: 0;
+    width: 1000px;
+  }
+
+  p {
+    position: absolute;
+    margin: 0;
+  }
+  .first {
+    left: 50px;
+    top: 50px;
+    animation: move1 3s linear alternate;
+  }
+  .second {
+    top: 50px;
+    right: 50px;
+    animation: move2 3s linear alternate;
+  }
+  .third {
+    bottom: 50px;
+    left: 50px;
+    animation: move3 3s linear alternate;
+  }
+
+  .fourth {
+    bottom: 50px;
+    right: 50px;
+    animation: move4 3s linear alternate;
+  }
+}
+@media screen and (min-width: 1200px) {
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  h1,
+  h4 {
+    animation: rotate 10s infinite linear;
+  }
+}
