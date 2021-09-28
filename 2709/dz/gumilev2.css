@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "Lobster";
+  src: url("Fonts/Lobster-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font: normal 16px/24px "Lobster";
+  margin: 0;
+  background: white;
+}
+.container {
+  margin: 50px auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  background: pink;
+  background: linear-gradient(to left top, lightblue, beige);
+  width: 900px;
+  height: 900px;
+}
+p,
+h1,
+h4 {
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+p,
+h4 {
+  width: 280px;
+}
+h1 {
+  width: 400px;
+}
+
+@media screen and (min-width: 640px) {
+  @keyframes move1 {
+    0% {
+      top: 156px;
+      left: 310px;
+    }
+    100% {
+      top: 50px;
+      left: 50px;
+    }
+  }
+  @keyframes move2 {
+    0% {
+      top: 276px;
+      right: 250px;
+    }
+    100% {
+      top: 50px;
+      right: 50px;
+    }
+  }
+  @keyframes move3 {
+    0% {
+      top: 396px;
+      left: 250px;
+    }
+    100% {
+      top: 754px;
+      left: 50px;
+    }
+  }
+  @keyframes move4 {
+    0% {
+      top: 516px;
+      right: 250px;
+    }
+    100% {
+      top: 754px;
+      right: 50px;
+    }
+  }
+  @keyframes moveh1 {
+    0% {
+      top: 24px;
+    }
+    100% {
+      top: 350px;
+    }
+  }
+  @keyframes moveh4 {
+    0% {
+      top: 96px;
+    }
+    100% {
+      top: 400px;
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  p,
+  h1,
+  h4 {
+    position: absolute;
+    margin: 0;
+  }
+  .first {
+    top: 50px;
+    left: 50px;
+    animation: move1 3s linear;
+  }
+  .second {
+    top: 50px;
+    right: 50px;
+    animation: move2 3s linear;
+  }
+  .third {
+    top: 754px;
+    left: 50px;
+    animation: move3 3s linear;
+  }
+  .fourth {
+    top: 754px;
+    right: 50px;
+    animation: move4 3s linear;
+  }
+  h1 {
+    top: 350px;
+    right: 250px;
+    animation: moveh1 3s linear;
+  }
+  h4 {
+    top: 400px;
+    right: 310px;
+    animation: moveh4 3s linear;
+  }
+}
+@media screen and (min-width: 1200px) {
+  @keyframes circle {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .first,
+  .second,
+  .third,
+  .fourth,
+  h1,
+  h4 {
+    animation: circle 10s infinite linear;
+  }
+  .first {
+    transform-origin: 400px 400px;
+  }
+  .second {
+    transform-origin: -400px 400px;
+  }
+  .third {
+    transform-origin: 400px -400px;
+  }
+  .fourth {
+    transform-origin: -400px -400px;
+  }
+  h1 {
+    transform-origin: 200px 100px;
+  }
+  h4 {
+    transform-origin: 140px 50px;
+  }
+}
