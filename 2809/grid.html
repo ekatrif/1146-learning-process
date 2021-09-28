@@ -13,13 +13,28 @@
         display: grid;
         margin: 20px auto;
         grid-template: repeat(8, 1fr) / repeat(8, 1fr);
-        color: red;
       }
       .container > div {
-        width: 100px;
-        height: 100px;
-        background: mediumaquamarine;
-        border: 1px solid black;
+        width: 98px;
+        height: 98px;
+      }
+      .first {
+        background: black;
+      }
+      .first + div + div {
+        background: blue;
+      }
+      div:nth-of-type(8n + 3) {
+        background: green;
+      }
+      .first ~ :nth-child(8n + 2) {
+        background: red;
+      }
+      .second {
+        background: white;
+      }
+      .second ~ .second {
+        background: yellow;
       }
     </style>
   </head>
@@ -34,6 +49,10 @@
       <div></div>
       <div></div>
       <div></div>
+      <div class="second"></div>
+      <div></div>
+      <div></div>
+      <div class="first"></div>
       <div></div>
       <div></div>
       <div></div>
@@ -71,11 +90,7 @@
       <div></div>
       <div></div>
       <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div class="second"></div>
       <div></div>
       <div></div>
       <div></div>
