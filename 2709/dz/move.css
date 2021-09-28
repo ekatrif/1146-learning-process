@@ -53,38 +53,38 @@ h4 {
   @keyframes spin1 {
     from {
       transform: translateY(358px) translateY(-50%) translateX(358px)
-        translateX(-50%) rotate(0turn) translateY(-358px) translateY(50%)
-        translateX(358px) translateX(-50%) rotate(1turn);
+        translateX(-50%) rotate(0deg) translateY(-358px) translateY(50%)
+        translateX(358px) translateX(-50%) rotate(360deg);
     }
     to {
       transform: translateY(358px) translateY(-50%) translateX(358px)
-        translateX(-50%) rotate(1turn) translateY(-358px) translateY(50%)
-        translateX(358px) translateX(-50%) rotate(0turn);
+        translateX(-50%) rotate(360deg) translateY(-358px) translateY(50%)
+        translateX(358px) translateX(-50%) rotate(0deg);
     }
   }
 
   @keyframes spin2 {
     from {
       transform: translateY(358px) translateY(-50%) translateX(-58px)
-        translateX(-50%) rotate(0turn) translateY(-358px) translateY(50%)
-        translateX(-58px) translateX(-50%) rotate(1turn);
+        translateX(-50%) rotate(0deg) translateY(-358px) translateY(50%)
+        translateX(-58px) translateX(-50%) rotate(360deg);
     }
     to {
       transform: translateY(358px) translateY(-50%) translateX(-58px)
-        translateX(-50%) rotate(1turn) translateY(-358px) translateY(50%)
-        translateX(-58px) translateX(-50%) rotate(0turn);
+        translateX(-50%) rotate(360deg) translateY(-358px) translateY(50%)
+        translateX(-58px) translateX(-50%) rotate(0deg);
     }
   }
   @keyframes spin3 {
     from {
       transform: translateY(-242px) translateY(-50%) translateX(150px)
-        translateX(-50%) rotate(0turn) translateY(242px) translateY(50%)
-        translateX(150px) translateX(-50%) rotate(1turn);
+        translateX(-50%) rotate(0deg) translateY(242px) translateY(50%)
+        translateX(150px) translateX(-50%) rotate(360deg);
     }
     to {
       transform: translateY(-242px) translateY(-50%) translateX(150px)
-        translateX(-50%) rotate(1turn) translateY(242px) translateY(50%)
-        translateX(150px) translateX(-50%) rotate(0turn);
+        translateX(-50%) rotate(360deg) translateY(242px) translateY(50%)
+        translateX(150px) translateX(-50%) rotate(0deg);
     }
   }
   p {
