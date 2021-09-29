@@ -137,38 +137,21 @@ h1 {
   }
 }
 @media screen and (min-width: 1200px) {
-  @keyframes circle {
-    0% {
-      transform: rotate(0deg);
+  @keyframes spin1 {
+    from {
+      transform: rotate(0deg) translateX(30px) rotate(0deg);
     }
-    100% {
-      transform: rotate(360deg);
+    to {
+      transform: rotate(360deg) translateX(30px) rotate(-360deg);
     }
   }
+  p,
+  h1,
+  h4,
   .first,
   .second,
   .third,
-  .fourth,
-  h1,
-  h4 {
-    animation: circle 10s infinite linear;
-  }
-  .first {
-    transform-origin: 400px 400px;
-  }
-  .second {
-    transform-origin: -400px 400px;
-  }
-  .third {
-    transform-origin: 400px -400px;
-  }
   .fourth {
-    transform-origin: -400px -400px;
-  }
-  h1 {
-    transform-origin: 200px 100px;
-  }
-  h4 {
-    transform-origin: 140px 50px;
+    animation: spin1 2s infinite linear;
   }
 }
