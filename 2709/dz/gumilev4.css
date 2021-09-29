@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "Lobster";
+  src: url("Fonts/Lobster-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font: normal 16px/24px "Lobster";
+  margin: 0;
+  background: white;
+}
+.container {
+  margin: 50px auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: pink;
+  background: linear-gradient(to left top, lightblue, beige);
+}
+p,
+p > span,
+h1,
+h4 {
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+@media screen and (min-width: 1000px) {
+  .container {
+    width: 900px;
+    height: 700px;
+  }
+  @keyframes move1 {
+    0% {
+      top: 0px;
+      left: 0px;
+    }
+    100% {
+      top: -100px;
+      left: -250px;
+    }
+  }
+  @keyframes move2 {
+    0% {
+      top: 0px;
+      left: 0px;
+    }
+    100% {
+      top: -230px;
+      left: 270px;
+    }
+  }
+  @keyframes move3 {
+    0% {
+      top: 0px;
+      left: 0px;
+    }
+    100% {
+      top: 150px;
+      left: -250px;
+    }
+  }
+  @keyframes move4 {
+    0% {
+      top: 0px;
+      left: 0px;
+    }
+    100% {
+      top: 30px;
+      left: 270px;
+    }
+  }
+  @keyframes moveh1 {
+    0% {
+      top: 0px;
+      left: 0px;
+    }
+    100% {
+      top: 250px;
+      left: 0px;
+    }
+  }
+  @keyframes moveh4 {
+    0% {
+      top: 0px;
+      left: 0px;
+    }
+    100% {
+      top: 270px;
+      left: 0px;
+    }
+  }
+  .first {
+    position: relative;
+    top: -100px;
+    left: -250px;
+    animation: move1 4s linear;
+  }
+  .second {
+    position: relative;
+    top: -230px;
+    left: 270px;
+    animation: move2 4s linear;
+  }
+  .third {
+    position: relative;
+    top: 150px;
+    left: -250px;
+    animation: move3 4s linear;
+  }
+  .fourth {
+    position: relative;
+    top: 30px;
+    left: 270px;
+    animation: move4 4s linear;
+  }
+  h1 {
+    position: relative;
+    top: 250px;
+    left: 0px;
+    animation: moveh1 4s linear;
+  }
+  h4 {
+    position: relative;
+    top: 270px;
+    left: 0px;
+    animation: moveh4 4s linear;
+  }
+}
+@media screen and (min-width: 1200px) {
+  @keyframes spin1 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes spin2 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .first {
+    animation: spin1 10s linear;
+    transform-origin: 400px 400px;
+    background: none;
+  }
+  .first span {
+    display: block;
+    animation: spin2 10s linear;
+    background: white;
+    border-radius: 10px;
+  }
+}
