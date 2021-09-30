@@ -1,0 +1,117 @@
+﻿@font-face {
+  font-family: 'Roboto'
+  src: url('fonts/Roboto-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/Roboto-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/Roboto-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+	margin: 0;
+	font: 400 normal 16px/26px 'Roboto';
+	display:flex;flex-direction:column;
+	height:100%;
+}
+p {
+	margin: 0;
+	letter-spacing: 0.05em;
+	opacity: 0.6;
+}
+.container {
+	width: 1140px;
+	margin: 0 auto;
+}
+footer {
+	height: 502px;
+	background: #316099;
+	color: #fff;
+	padding: 91px 0 64px;
+}
+hr {
+    border-color: white;
+    opacity: 0.4;
+}
+button {
+	background: #5a98d0;
+	color: #fff;
+	height: 26px;
+	border: none;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	font: 400 normal 16px/26px 'Roboto';
+	letter-spacing: 0.04em;
+}
+footer button {
+	width: 237px;
+	height: 56px;
+	float: right;
+	margin-top: 74px;
+}
+footer p {
+	width: 490px;
+	margin-bottom: 96px;
+	flex:none;
+}
+footer .heading {
+	font: 400 normal 36px/46px 'Roboto';
+	opacity: 1;
+	margin-bottom: 32px;
+}
+footer .copy {
+	opacity: 0.4;
+	margin: 0;
+}
+footer ol {
+	margin: 64px 0;
+	display: flex;
+	justify-content: space-between;
+	padding-left: 17px;
+}
+footer li {
+	flex: 0 0 316px;
+	padding-left: 25px;
+	letter-spacing: 0.05em;
+}
+html {height:100%;}
+main {flex:1 1 auto;}
+@media screen and (max-width: 1200px) {
+	.container {
+	width: auto;
+	margin: 0 30px;
+	}
+	}
+	@media screen and (max-width: 1080px) {
+		footer ol {display:block;
+			padding-left: 124px;}
+	}
+
+.heading {width:336px;}
+footer p {width:336px;padding-left:94px;	width: 336px;
+	margin-bottom: 64px;}
+footer button {
+	width: 134px;
+	height: 32px;
+	float: right;
+	margin-top: 114px;margin-right:94px;
+}
+
+footer {
+	height: 533px;
+	padding: 47px 0 64px;
+}
+
+footer li {
+		padding-left: 60px;
+}
