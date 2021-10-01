@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "Mulish";
+  src: url("Fonts/Mulish/Mulish-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font: normal 16px/24px "Mulish";
+  margin: 0;
+}
+.container {
+  margin: 20px auto;
+  background: pink;
+  position: relative;
+  padding: 10px;
+}
+p,
+h1,
+h4 {
+  background: white;
+  border-radius: 10px;
+  width: 280px;
+  padding: 10px;
+}
+@media screen and (min-width: 720px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 816px;
+    padding: 0;
+    width: 816px;
+  }
+  p {
+    position: absolute;
+    margin: 0;
+  }
+  .first {
+    top: 50px;
+    left: 50px;
+  }
+  .second {
+    top: 50px;
+    right: 50px;
+  }
+  .third {
+    bottom: 50px;
+    left: calc(50% - 150px);
+  }
+}
+@media screen and (min-width: 1200px) {
+  @keyframes spin1 {
+    from {
+      transform: translateY(358px) translateY(-50%) translateX(358px)
+        translateX(-50%) rotate(0deg) translateY(-358px) translateY(50%)
+        translateX(358px) translateX(-50%) rotate(360deg);
+    }
+    to {
+      transform: translateY(358px) translateY(-50%) translateX(358px)
+        translateX(-50%) rotate(360deg) translateY(-358px) translateY(50%)
+        translateX(358px) translateX(-50%) rotate(0deg);
+    }
+  }
+
+  @keyframes spin2 {
+    from {
+      transform: translateY(358px) translateY(-50%) translateX(-58px)
+        translateX(-50%) rotate(0deg) translateY(-358px) translateY(50%)
+        translateX(-58px) translateX(-50%) rotate(360deg);
+    }
+    to {
+      transform: translateY(358px) translateY(-50%) translateX(-58px)
+        translateX(-50%) rotate(360deg) translateY(-358px) translateY(50%)
+        translateX(-58px) translateX(-50%) rotate(0deg);
+    }
+  }
+  @keyframes spin3 {
+    from {
+      transform: translateY(-242px) translateY(-50%) translateX(150px)
+        translateX(-50%) rotate(0deg) translateY(242px) translateY(50%)
+        translateX(150px) translateX(-50%) rotate(360deg);
+    }
+    to {
+      transform: translateY(-242px) translateY(-50%) translateX(150px)
+        translateX(-50%) rotate(360deg) translateY(242px) translateY(50%)
+        translateX(150px) translateX(-50%) rotate(0deg);
+    }
+  }
+  p {
+  }
+  .first {
+    animation: spin1 10s infinite linear;
+  }
+  .second {
+    animation: spin2 10s infinite linear;
+  }
+  .third {
+    animation: spin3 10s infinite linear;
+  }
+}
