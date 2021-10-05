@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Functions</title>
+
+    <script>
+      /* function summa(x, y) {
+        let sum = x * y;
+        return sum;
+      }
+
+      let a = 2,
+        b = 4;
+
+      console.log(summa(a, b));
+      function multi(x, y) {
+        let multi = x * y;
+        return multi;
+      }
+
+      let a = 10,
+        b = 6;
+
+      console.log(multi(a, b));*/
+      let n = "ываываыв";
+      function fact(n) {
+        if (typeof n == "number" && n > 0 && Math.floor(n) == n) {
+          let res = 1;
+          for (let i = 1; i <= n; i++) {
+            res *= i;
+          }
+          return res;
+        } else {
+          console.log("Недопустимый аргумент");
+        }
+      }
+      console.log(fact(n));
+    </script>
+  </head>
+
+  <body></body>
+</html>
