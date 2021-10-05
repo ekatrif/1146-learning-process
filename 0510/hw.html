@@ -10,7 +10,6 @@
         for (let i = 1; i <= attemt; i++) {
           let myNum = prompt("введите число");
           if (num == myNum) {
-            //document.write('<h1>Вход разрешен!</h1>');
             return `Вы угадали! Число попыток ${i}`;
           } else if (i != attemt) {
             if (num < myNum) {
@@ -18,7 +17,6 @@
             } else alert("Больше");
           } else alert("это была последняя попытка");
         }
-        //document.write('<h1>Вход запрещен!</h1>');
       }
       console.log(gessNumber(17, 7));
     </script>
