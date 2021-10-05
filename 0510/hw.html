@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Угадай число</title>
+    <script>
+      function gessNumber(num, attemt) {
+        for (let i = 1; i <= attemt; i++) {
+          let myNum = prompt("введите число");
+          if (num == myNum) {
+            //document.write('<h1>Вход разрешен!</h1>');
+            return `Вы угадали! Число попыток ${i}`;
+          } else if (i != attemt) {
+            if (num < myNum) {
+              alert("Меньше");
+            } else alert("Больше");
+          } else alert("это была последняя попытка");
+        }
+        //document.write('<h1>Вход запрещен!</h1>');
+      }
+      console.log(gessNumber(17, 7));
+    </script>
+  </head>
+  <body></body>
+</html>
