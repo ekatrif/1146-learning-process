@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let source = [1, 3, 9, 3, 12, 16, 5, 2, 0, 9];
+      console.log(source);
+      //    var max = Math.max.apply(null, source);
+      //    var min = Math.min.apply(null, source);
+      //   console.log(max);
+      //   console.log(min);
+      //найти 2 наибольших элемента
+      /*  var maxValues = [source[0]];
+
+      for (let a = 0; a < source.length; a++) {
+        if (source[a] > maxValues[maxValues.length - 1]) {
+          maxValues.push(source[a]);
+        }
+      }
+
+      alert(
+        "Ответ: " +
+          maxValues[maxValues.length - 1] +
+          " " +
+          maxValues[maxValues.length - 2]
+      );*/
+      var max = Math.max.apply(null, source); //находим первое максимальное значение
+      console.log(max);
+      let source2 = source;
+      const index = source2.indexOf(max); // ищем в массиве индекс элемента max
+      if (index > -1) {
+        source2.splice(index, 1); //вырезаем этот элемент
+      }
+
+      console.log(source2);
+      var max2 = Math.max.apply(null, source2); //находим первое максимальное значение
+      console.log(max2);
+    </script>
+  </head>
+  <body></body>
+</html>

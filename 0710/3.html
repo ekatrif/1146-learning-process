@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Игра</title>
+    <script>
+      let zagadki = [
+        {
+          question: "Зимой и летом одним цветом",
+          answer: ["кровь", "елка", "ёлка", "пожарная машина", "сосна", "ель"],
+        },
+        {
+          question: "Ни окон, ни дверей, полна горница людей",
+          answer: ["огурец", "дыня", "арбуз", "горох", "горошек"],
+        },
+        {
+          question: "Из стены торчу, Головой кручу, Мою и пою Целую семью.",
+          answer: ["кран", "водопроводный кран", "душ", "смеситель"],
+        },
+        {
+          question:
+            "Маленькие домики по улице бегут. Мальчиков и девочек домики везут.",
+          answer: [
+            "машины",
+            "автомобили",
+            "автобусы",
+            "троллейбусы",
+            "трамваи",
+            "машина",
+            "автомобиль",
+            "автобус",
+            "троллейбус",
+            "трамвай",
+          ],
+        },
+        {
+          question: "Пустые отдыхаем, а полные шагаем.",
+          answer: ["сапоги", "ботинки", "обувь", "туфли"],
+        },
+      ];
+      let userName = prompt("Введите Ваше имя");
+      let privet;
+      if (userName) {
+        privet = `Привет, ${userName}! Поиграем?`;
+      } else privet = `Привет! Поиграем?`;
+      function Vhod() {
+        if (confirm(privet)) {
+          alert("Поехали!");
+          let numTrue;
+          // console.log(zagadki[0].question);
+          for (let i = 0; i < zagadki.length; i++) {
+            let userAnswer = prompt(zagadki[i].question);
+            if (zagadki[i].answer.includes(userAnswer.toLowerCase(), 0)) {
+              alert("Верно!");
+              numTrue = i + 1;
+            } else alert("Неверно!");
+          }
+          if (numTrue == zagadki.length) {
+            alert(`Вы ответили верно на все загадки. Пока!`);
+          } else if (numTrue == 1) {
+            alert(`Вы дали 1 верный ответ. Пока!`);
+          } else if (numTrue > 0) {
+            alert(`Вы дали ${numTrue} верных ответа (тов). Пока!`);
+          } else alert("Вы не отгадали ни одной загадки. Пока!");
+        } else {
+          alert("Пока!");
+        }
+      }
+      Vhod();
+    </script>
+  </head>
+  <body></body>
+</html>
