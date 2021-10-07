@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+    <script>
+      /* let a, b, c;
+         a = {};
+         b = { prop: 123 };
+         c = a;
+         // console.log(a);
+         // console.log(b.prop);
+         a["href"] = "URL";
+         console.log(c);
+         console.log(b.prop);
+         console.log(b["prop"]);
+         a.href='URL'
+        let obj = {};
+        obj.name = prompt("Ваше имя");
+        obj.age = prompt("Ваш возраст");
+        console.log(obj);
+        let a = { name: "Иван", speciality: "плотник" };
+        let b = { name: "Петр", speciality: "охотник" };
+        let c = { name: "Артур", speciality: "разгильдяй" };
+
+        function checkman(x) {
+          if (x.speciality === "разгильдяй") return "Мы его не уважаем";
+          return "Мы его уважаем";
+        }
+        console.log(checkman(a));
+        console.log(checkman(b));
+        console.log(checkman(c));*/
+      /*  let auto1 = { color: "red", model: "Москвич", velocity: "" };
+        let auto2 = { color: "blue", model: "Мазда", velocity: "" };
+        let auto3 = { color: "green", model: "Форд", velocity: "" };
+
+        //    console.log(auto1);
+        //  console.log(auto2);
+        //   console.log(auto3);
+        auto1.start = function () {
+          alert("Поехали!");
+          this.velocity = 60;
+        };
+
+        auto1.start(); // Поехали!
+        auto1.stop = function () {
+          alert("Встали!");
+          this.velocity = 0;
+        };
+
+        auto1.stop(); // Встали!*/
+      /* let car = {
+          color: "red",
+          model: "Москвич",
+          speed: "",
+          start: function () {
+            alert("Поехали!");
+            this.speed = 60;
+          },
+          stop: function () {
+            alert("Встали!");
+            this.speed = 0;
+          },
+        };*/
+      function Car(color, model, speed) {
+        //Функция-конструктор
+        this.color = color;
+        this.model = model;
+        this.speed = 0;
+        this.start = function () {
+          alert("Поехали");
+          this.speed = prompt("Задайте скорость");
+        };
+        this.stop = function () {
+          alert("Стоп");
+          this.speed = 0;
+        };
+      }
+      let car1 = new Car("Красный", "Москвич", 0);
+      let car2 = new Car("Синий", "Форд", 0);
+      let car3 = new Car("Зеленый", "Мицубиси", 0);
+      console.log(car1);
+      console.log(car2);
+      console.log(car3);
+
+      /*   let Cars = [
+        ["Красный", "Москвич", 0],
+        ["Синий", "Форд", 0],
+        ["Зеленый", "Мицубиси", 0],
+      ];
+
+      console.log(Cars);*/
+    </script>
+  </head>
+  <body></body>
+</html>
