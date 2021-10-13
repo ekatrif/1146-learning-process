@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Chessboard</title>
+
+    <style>
+      table {
+        border: 1px solid #000;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      td,
+      th {
+        width: 25px;
+        height: 25px;
+      }
+      th {
+        font-family: Arial;
+        color: #666;
+      }
+      td {
+        font-weight: bold;
+      }
+      tr:nth-child(even) td:nth-child(odd),
+      tr:nth-child(odd) td:nth-child(even) {
+        background: #999;
+      }
+      tr:nth-child(even) td:nth-child(even),
+      tr:nth-child(odd) td:nth-child(odd) {
+        background: #eee;
+      }
+      tr:nth-child(2),
+      tr:nth-child(3) {
+        color: red;
+      }
+      tr:nth-of-type(8),
+      tr:nth-of-type(9) {
+        color: yellow;
+      }
+      .clicked {
+        background: blue !important;
+      }
+    </style>
+
+    <script>
+      window.onload = function () {
+        let chessboard = "";
+        chessboard += "<table>";
+        for (let i = 0; i < 10; i++) {
+          chessboard += "<tr>";
+          for (let j = 0; j < 10; j++) {
+            let hlpstr = "d";
+            if (i == 0 || i == 9 || j == 0 || j == 9) hlpstr = "h";
+            chessboard += "<t" + hlpstr + ">";
+            chessboard += "</t" + hlpstr + ">";
+          }
+          chessboard += "</tr>";
+        }
+        chessboard += "</table>";
+        document.body.innerHTML = chessboard;
+
+        // Помещаем в нужные ячейки цифры и буквы
+
+        let letters = "ABCDEFGH";
+        let rows = document.getElementsByTagName("tr");
+        let uses = rows[0].getElementsByTagName("th");
+
+        for (let i = 1; i < 9; i++) {
+          uses[i].innerHTML = letters[i - 1];
+        }
+        uses = rows[9].getElementsByTagName("th");
+        for (let i = 1; i < 9; i++) {
+          uses[i].innerHTML = letters[i - 1];
+        }
+        for (let i = 1; i < 9; i++) {
+          rows[i].querySelectorAll("th").forEach(function (item) {
+            item.innerHTML = 9 - i;
+          });
+        }
+        //Расставляем пешки
+        uses = rows[2].getElementsByTagName("td");
+        for (let i = 0; i < 8; i++) {
+          uses[i].innerHTML = "&#9823;";
+        }
+        uses = rows[7].getElementsByTagName("td");
+        for (let i = 0; i < 8; i++) {
+          uses[i].innerHTML = "&#9817;";
+        }
+
+        // Расставляем красные фигуры
+
+        rows[1].getElementsByTagName("td")[0].innerHTML = "&#9820;";
+        rows[1].getElementsByTagName("td")[7].innerHTML = "&#9820;";
+        rows[1].getElementsByTagName("td")[1].innerHTML = "&#9822;";
+        rows[1].getElementsByTagName("td")[6].innerHTML = "&#9822;";
+        rows[1].getElementsByTagName("td")[2].innerHTML = "&#9821;";
+        rows[1].getElementsByTagName("td")[5].innerHTML = "&#9821;";
+        rows[1].getElementsByTagName("td")[3].innerHTML = "&#9819;";
+        rows[1].getElementsByTagName("td")[4].innerHTML = "&#9818;";
+
+        //Желтые фигуры
+
+        rows[8].getElementsByTagName("td")[0].innerHTML = "&#9814;";
+        rows[8].getElementsByTagName("td")[7].innerHTML = "&#9814;";
+        rows[8].getElementsByTagName("td")[1].innerHTML = "&#9816;";
+        rows[8].getElementsByTagName("td")[6].innerHTML = "&#9816;";
+        rows[8].getElementsByTagName("td")[2].innerHTML = "&#9815;";
+        rows[8].getElementsByTagName("td")[5].innerHTML = "&#9815;";
+        rows[8].getElementsByTagName("td")[3].innerHTML = "&#9813;";
+        rows[8].getElementsByTagName("td")[4].innerHTML = "&#9812;";
+
+        document.addEventListener("click", function (event) {
+          if (event.target.tagName == "TD") {
+            document
+              .getElementsByClassName("clicked")
+              .style.backgroundColor("");
+            // кликнутая клетка должна стать синей.
+            // ранее кликнутые клетки должны перестать быть синими
+            // если кликнута синяя клетка, она должна перестать быть синей
+          }
+        });
+      };
+    </script>
+  </head>
+
+  <body>
+    <!-- table>
+            <tr>
+                <th></th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+                <th>F</th>
+                <th>G</th>
+                <th>H</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td>&#9820;</td>
+                <td>&#9822;</td>
+                <td>&#9821;</td>
+                <td>&#9819;</td>
+                <td>&#9818;</td>
+                <td>&#9821;</td>
+                <td>&#9822;</td>
+                <td>&#9820;</td>
+                <th>8</th>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <th>7</th>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>6</th>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>5</th>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>4</th>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>3</th>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <th>2</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <td>&#9814;</td>
+                <td>&#9816;</td>
+                <td>&#9815;</td>
+                <td>&#9813;</td>
+                <td>&#9812;</td>
+                <td>&#9815;</td>
+                <td>&#9816;</td>
+                <td>&#9814;</td>
+                <th>1</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+                <th>F</th>
+                <th>G</th>
+                <th>H</th>
+                <th></th>
+            </tr>
+        </table -->
+  </body>
+</html>
