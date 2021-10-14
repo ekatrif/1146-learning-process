@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Events</title>
+
+    <style>
+      #green {
+        margin: 0 auto;
+        height: 898px;
+        width: 898px;
+        border: 1px dashed black;
+        background: green;
+        position: relative;
+      }
+      #red {
+        height: 98px;
+        width: 98px;
+        border: 1px dashed black;
+        background: red;
+        position: absolute;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+      }
+    </style>
+
+    <script>
+      let start = {
+        x: null,
+        y: null,
+        deltax: null,
+        deltay: null,
+      };
+      let dndflag = false;
+      window.onload = function () {
+        document
+          .querySelector("#red")
+          .addEventListener("mousedown", function (e) {
+            if (dndflag) return false;
+            dndflag = true;
+            start.x = e.x;
+            start.y = e.y;
+            start.deltax =
+              e.target.getBoundingClientRect().x -
+              document.querySelector("#green").getBoundingClientRect().x -
+              1;
+            start.deltay =
+              e.target.getBoundingClientRect().y -
+              document.querySelector("#green").getBoundingClientRect().y -
+              1;
+            console.log(start.deltax);
+            console.log(start.deltay);
+            console.log(document.querySelector("#red").style.left);
+            console.log(document.querySelector("#red").style.top);
+          });
+        document.addEventListener("mouseup", function (e) {
+          dndflag = false;
+        });
+        document
+          .querySelector("#red")
+          .addEventListener("mousemove", function (e) {
+            if (dndflag) moveIt(e.x, e.y);
+          });
+      };
+      function moveIt(x, y) {
+        document.querySelector("#red").style.left =
+          x - start.x + start.deltax + "px";
+        document.querySelector("#red").style.top =
+          y - start.y + start.deltay + "px";
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="green">
+      <div id="red"></div>
+    </div>
+  </body>
+</html>

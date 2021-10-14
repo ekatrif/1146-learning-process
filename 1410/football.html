@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Events</title>
+
+    <style>
+      #green {
+        margin: 0 auto;
+        height: 898px;
+        width: 898px;
+        border: 1px dashed black;
+        background: green;
+        position: relative;
+      }
+      #red {
+        height: 98px;
+        width: 98px;
+        border: 1px dashed black;
+        background: red;
+        position: absolute;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+      }
+    </style>
+
+    <script>
+      // Обработать событие наезда указателя мыши на блок
+      // Блок должен отскочить примерно в том же направлении примерно на 10-50 пикселей
+      // При соприкосновении в краем поля блок останавливается
+
+      window.onload = function () {
+        let field = document.getElementById("green").getBoundingClientRect();
+        let borders = {
+          left: field.x,
+          top: field.y,
+          right: field.x + field.width,
+          bottom: field.y + field.height,
+
+          // вычисляем правый и нижний края
+        };
+        document
+          .getElementById("red")
+          .addEventListener("mouseover", function (e) {
+            let coords = e.target.getBoundingClientRect();
+            // вычисляем центр красного блока
+            let center = {
+              x: coords.left + coords.width / 2,
+              y: coords.top + coords.height / 2,
+            };
+            // сравниваем координаты центра и координаты курсора мыши
+            let delta = {
+              x: Math.sign(center.x - e.x),
+              y: Math.sign(center.y - e.y),
+            };
+            // определяем в каком направлении двигаться
+            let distance = 50;
+            let topM = distance * delta.y;
+            let leftM = distance * delta.x;
+            // определяем положение верхнего левого угла блока относительно его родителя!!!
+            let x = coords.x - field.x;
+            let y = coords.y - field.y;
+
+            // вычисляем новое положение
+            let newx = x + leftM;
+            let newy = y + topM;
+            // проверяем нет ли касания границ поля.
+            if (newx <= 0) newx = 0;
+            if (newx >= field.width - coords.width)
+              newx = field.width - coords.width;
+            if (newy <= 0) newy = 0;
+            if (newy >= field.height - coords.height)
+              newy = field.height - coords.height;
+            // прописываем в стили красного блока новое положение
+            document.getElementById("red").style.left = newx + "px";
+            document.getElementById("red").style.top = newy + "px";
+          });
+      };
+    </script>
+  </head>
+
+  <body>
+    <div id="green">
+      <div id="red"></div>
+    </div>
+  </body>
+</html>

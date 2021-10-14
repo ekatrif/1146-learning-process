@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        ball.onmousedown = function (event) {
+          let shiftX = event.clientX - ball.getBoundingClientRect().left;
+          let shiftY = event.clientY - ball.getBoundingClientRect().top;
+
+          ball.style.position = "absolute";
+          ball.style.zIndex = 1000;
+          document.body.append(ball);
+
+          moveAt(event.pageX, event.pageY);
+
+          // переносит мяч на координаты (pageX, pageY),
+          // дополнительно учитывая изначальный сдвиг относительно указателя мыши
+          function moveAt(pageX, pageY) {
+            ball.style.left = pageX - shiftX + "px";
+            ball.style.top = pageY - shiftY + "px";
+          }
+
+          function onMouseMove(event) {
+            moveAt(event.pageX, event.pageY);
+          }
+
+          // передвигаем мяч при событии mousemove
+          document.addEventListener("mousemove", onMouseMove);
+
+          // отпустить мяч, удалить ненужные обработчики
+          ball.onmouseup = function () {
+            document.removeEventListener("mousemove", onMouseMove);
+            ball.onmouseup = null;
+          };
+        };
+
+        ball.ondragstart = function () {
+          return false;
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <img
+      src="https://js.cx/clipart/ball.svg"
+      style="
+        cursor: pointer;
+        position: absolute;
+        z-index: 1000;
+        left: 546px;
+        top: 60px;
+      "
+      width="40"
+      height="40"
+      id="ball"
+    />
+  </body>
+</html>
