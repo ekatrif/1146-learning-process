@@ -72,9 +72,19 @@
             if (newy <= 0) newy = 0;
             if (newy >= field.height - coords.height)
               newy = field.height - coords.height;
+
+            let newdeltaX = newx - x;
+            let newdeltaY = newy - y;
             // прописываем в стили красного блока новое положение
-            document.getElementById("red").style.left = newx + "px";
-            document.getElementById("red").style.top = newy + "px";
+            let steps = 10;
+            for (let i = 1; i < steps + 1; i++) {
+              document.getElementById("red").style.left =
+                x + newdeltaX / steps + "px";
+              document.getElementById("red").style.top =
+                y + newdeltaY / steps + "px";
+              x = x + newdeltaX / steps;
+              y = y + newdeltaY / steps;
+            }
           });
       };
     </script>
