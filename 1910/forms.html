@@ -5,7 +5,7 @@
 
     <title>Forms</title>
 
-    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <script src="jquery-3.6.0.min.js"></script>
 
@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <form>
+    <form id="myform">
       <h1>Элементы форм</h1>
 
       <fieldset>
@@ -29,6 +29,42 @@
 
         <div id="calendar"></div>
       </fieldset>
+
+      <fieldset>
+        <legend>Секундомер</legend>
+
+        <button class="timer_btn" type="button">Запустить</button>
+
+        <div class="timer_field">00:00:00.<span>000</span></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Селектор</legend>
+
+        <!-- select>
+                    <option selected disabled>Выберите город</option>
+                    <option>Москва</option>
+                    <option>Санкт-Петербург</option>
+                    <option>Екатеринбург</option>
+                    <option>Казань</option>
+                </select -->
+
+        <div class="selector" data-value="">
+          <button type="button" class="sel_btn">&#11206;</button>
+
+          <div class="sel_head">Выберите город</div>
+
+          <div class="sel_opts" style="display: none">
+            <div class="sel_option heading">Выберите город</div>
+            <div class="sel_option" data-value="1">Москва</div>
+            <div class="sel_option" data-value="2">Санкт-Петербург</div>
+            <div class="sel_option" data-value="3">Екатеринбург</div>
+            <div class="sel_option" data-value="4">Казань</div>
+          </div>
+        </div>
+      </fieldset>
+
+      <button>Отправить форму</button>
     </form>
   </body>
 </html>
