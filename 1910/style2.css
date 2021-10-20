@@ -71,11 +71,15 @@ input {
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: auto;
   margin-top: 1em;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
 }
 .dp_grid > span {
   padding: 20px;
   margin: 0;
   text-align: center;
+  border-top: 1px solid #808080;
+  border-right: 1px solid #808080;
 }
 .headday {
   font-weight: bold;
@@ -83,12 +87,12 @@ input {
 }
 .getter {
   cursor: pointer;
-  border: 1px solid #808080;
+  /*border: 1px solid #808080;*/
 }
 .getter:hover {
   background: #98ff98;
   color: #000;
-  border: 1px dashed #808080;
+  border: 1px solid #808080;
   font-weight: bold;
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
@@ -101,7 +105,7 @@ input {
 .getter.holiday:hover {
   color: #fff;
   background-color: #800080;
-  border: 1px dashed #fff;
+  border: 1px solid #fff;
 }
 .markedday {
   color: #000;
@@ -111,12 +115,12 @@ input {
   color: #000;
   background: #98ff98;
   font-weight: bold;
-  border: 2px dashed #808080;
+  /*border: 2px dashed #808080;*/
 }
 .holiday.today {
   background: #800080;
   color: #fff;
-  border: 1px dashed #fff;
+  /* border: 1px dashed #fff;*/
 }
 
 .cashday {
