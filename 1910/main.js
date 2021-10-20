@@ -199,10 +199,6 @@ function checkForm() {
     time: null, // div class="timer_field" !!!без тегов!!!
     city: null, // div class="selector" data-value
   };
-  // let numV = $(".selector").data("value");
-
-  // console.log(numV, typeof numV);
-
   formdata = {
     date: $("#date").val(),
     time: $(".timer_field").text(),
