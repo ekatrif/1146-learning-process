@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Multiple</title>
+
+    <script>
+      function multiple(num, words) {
+        let indexW;
+        let lastNum = a % 10;
+        words = ["рубль", "рубля", "рублей"];
+
+        if (a % 100 == 11 || a % 100 == 12 || a % 100 == 13 || a % 100 == 14)
+          indexW = 2;
+        else if (a % 10 == 1) indexW = 0;
+        else if (a % 10 == 2 || a % 10 == 3 || a % 10 == 4) indexW = 1;
+        else indexW = 2;
+
+        num = a;
+        words = words[indexW];
+        return num, words;
+        /*
+      x1 рубль (кроме 11)
+      x2 - x4 рубля (кроме 12 - 14)
+      xx рублей
+
+      (N % 100) -> xx
+      */
+      }
+    </script>
+  </head>
+
+  <body>
+    <script>
+      let a = Math.floor(Math.random() * 101);
+      multiple();
+      document.write(a, " ", multiple());
+    </script>
+  </body>
+</html>
